@@ -1,6 +1,7 @@
 <script>
 	import Chessboard from './Chessboard.svelte';
-import './styles.css';
+	import './styles.css';
+
 </script>
 
 <svelte:head>
@@ -10,7 +11,6 @@ import './styles.css';
 
 <div class="container">
 	<div class="half-screen" id="left">
-		<h1> Dit is links</h1>
 		<Chessboard />
 	</div>
 	<div class="half-screen" id="right"><h1> Dit is rechts </h1></div>
@@ -19,22 +19,24 @@ import './styles.css';
 <style>
 	.container {
 		display: flex;
+		height: 100vh;
 	}
 
 	.half-screen {
 		width: 50%;
 		height: 100%;
-		display: border-box;
 	}
 
 	#left {
 		background-color: var(--color-bg-1);
-		margin-left: 1em;
+		box-sizing: border-box;
+		display: grid; /* Added for centering */
+		place-items: center; /* Center child elements horizontally and vertically */
 	}
 
 	#right {
 		background-color: var(--color-bg-2);
-		margin-right: 1em;
+		margin-right: 3em;
 	}
 
 </style>
