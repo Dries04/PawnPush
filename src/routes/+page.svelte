@@ -13,7 +13,10 @@
 	<div class="half-screen" id="left">
 		<Chessboard />
 	</div>
-	<div class="half-screen" id="right"><h1> Dit is rechts </h1></div>
+	<div class="half-screen" id="right">
+		<h1> Dit is rechts </h1>
+		<p> Dit is een test </p>
+	</div>
 </div>
 
 <style>
