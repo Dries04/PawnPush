@@ -8,11 +8,10 @@
         {#each horizontalAxis as horizontal}
             {#if (horizontal.charCodeAt(0) + vertical.charCodeAt(0)) % 2 === 0}
                 <div class="black-tile">
-                    {horizontal}{vertical}
+                    <img src="/Chess-Pieces/Kiwen-suwi/bP.svg" alt=""/>
                 </div>
             {:else}
                 <div class="white-tile">
-                    {horizontal}{vertical}
                 </div>
             {/if}
         {/each}
@@ -38,5 +37,15 @@
         display: grid;
         place-items: center;
         background-color: #3f835c;
+    }
+
+    .black-tile img {
+        width: 80%;
+        height: 80%;
+    }
+
+    .white-tile img {
+        width: 80%;
+        height: 80%;
     }
 </style>
