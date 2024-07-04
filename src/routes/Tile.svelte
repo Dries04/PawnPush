@@ -1,6 +1,7 @@
 <script lang=ts>
     export let number: number = 0;
     export let image: string = "";
+    export let Chess_Pieces_style: string = "/Chess-Pieces/Kiwen-suwi/";
 </script>
 
 {#if number % 2 === 0}
@@ -8,7 +9,11 @@
         <div class="black-tile"></div>
     {:else}
         <div class="black-tile">
-            <img src="/Chess-Pieces/Kiwen-suwi/{image}.svg"  alt=""/>
+            <div class="black-tile-img" style={`background-image: url(${Chess_Pieces_style}${image}.svg); 
+                background-repeat: no-repeat; 
+                background-position: center; 
+                background-size: cover;`}>
+            </div>
         </div>
     {/if}
 {:else}
@@ -16,7 +21,11 @@
         <div class="white-tile"></div>
     {:else}
         <div class="white-tile">
-            <img src="/Chess-Pieces/Kiwen-suwi/{image}.svg"  alt=""/>
+            <div class="white-tile-img" style={`background-image: url(${Chess_Pieces_style}${image}.svg); 
+                background-repeat: no-repeat; 
+                background-position: center; 
+                background-size: cover;`}>
+            </div>
         </div>
     {/if}
 {/if}
@@ -31,15 +40,18 @@
         display: grid;
         place-items: center;
         background-color: #3f835c;
+        height: 100%;
+        width: 100%;
     }
 
-    .black-tile img {
-        width: 80%;
+    .black-tile-img {
         height: 80%;
+        width: 80%;
     }
 
-    .white-tile img {
-        width: 80%;
+    .white-tile-img {
         height: 80%;
+        width: 80%;
     }
+
 </style>

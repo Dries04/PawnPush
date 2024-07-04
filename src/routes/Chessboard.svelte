@@ -11,15 +11,20 @@
         horizontal: string;
     }
 
+    // Array of pieces in starting position
     const pieces: Piece[] = [
         { image: "bN", vertical: '8', horizontal: 'B' },
         { image: "bN", vertical: '8', horizontal: 'G' },
+
         { image: "bB", vertical: '8', horizontal: 'C' },
         { image: "bB", vertical: '8', horizontal: 'F' },
+
         { image: "bR", vertical: '8', horizontal: 'A' },
         { image: "bR", vertical: '8', horizontal: 'H' },
+
         { image: "bQ", vertical: '8', horizontal: 'D' },
         { image: "bK", vertical: '8', horizontal: 'E' },
+
         { image: "bP", vertical: '7', horizontal: 'A' },
         { image: "bP", vertical: '7', horizontal: 'B' },
         { image: "bP", vertical: '7', horizontal: 'C' },
@@ -28,14 +33,19 @@
         { image: "bP", vertical: '7', horizontal: 'F' },
         { image: "bP", vertical: '7', horizontal: 'G' },
         { image: "bP", vertical: '7', horizontal: 'H' },
+
         { image: "wN", vertical: '1', horizontal: 'B' },
         { image: "wN", vertical: '1', horizontal: 'G' },
+
         { image: "wB", vertical: '1', horizontal: 'C' },
         { image: "wB", vertical: '1', horizontal: 'F' },
+
         { image: "wR", vertical: '1', horizontal: 'A' },
         { image: "wR", vertical: '1', horizontal: 'H' },
+
         { image: "wQ", vertical: '1', horizontal: 'D' },
         { image: "wK", vertical: '1', horizontal: 'E' },
+
         { image: "wP", vertical: '2', horizontal: 'A' },
         { image: "wP", vertical: '2', horizontal: 'B' },
         { image: "wP", vertical: '2', horizontal: 'C' },
@@ -44,7 +54,6 @@
         { image: "wP", vertical: '2', horizontal: 'F' },
         { image: "wP", vertical: '2', horizontal: 'G' },
         { image: "wP", vertical: '2', horizontal: 'H' }
-        // Add other pieces here
     ];
 
     let image = ""; // This will now be updated reactively
@@ -63,7 +72,7 @@
 <div class="chessboard">
     {#each verticalAxis as vertical}
         {#each horizontalAxis as horizontal}
-            <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} />
+            <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={"/Chess-Pieces/Kiwen-suwi/"}/>
         {/each}
     {/each}
 </div>
