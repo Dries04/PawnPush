@@ -1,19 +1,69 @@
-<script>
+<script lang=ts>
+    import Tile from "./Tile.svelte";
+
     let horizontalAxis = ["A", "B", "C", "D", "E", "F", "G", "H"];
     let verticalAxis = ['8', '7', '6', '5', '4', '3', '2', '1'];
+
+    // Piece properties
+    interface Piece {
+        image: string;
+        vertical: string;
+        horizontal: string;
+    }
+
+    const pieces: Piece[] = [
+        { image: "bN", vertical: '8', horizontal: 'B' },
+        { image: "bN", vertical: '8', horizontal: 'G' },
+        { image: "bB", vertical: '8', horizontal: 'C' },
+        { image: "bB", vertical: '8', horizontal: 'F' },
+        { image: "bR", vertical: '8', horizontal: 'A' },
+        { image: "bR", vertical: '8', horizontal: 'H' },
+        { image: "bQ", vertical: '8', horizontal: 'D' },
+        { image: "bK", vertical: '8', horizontal: 'E' },
+        { image: "bP", vertical: '7', horizontal: 'A' },
+        { image: "bP", vertical: '7', horizontal: 'B' },
+        { image: "bP", vertical: '7', horizontal: 'C' },
+        { image: "bP", vertical: '7', horizontal: 'D' },
+        { image: "bP", vertical: '7', horizontal: 'E' },
+        { image: "bP", vertical: '7', horizontal: 'F' },
+        { image: "bP", vertical: '7', horizontal: 'G' },
+        { image: "bP", vertical: '7', horizontal: 'H' },
+        { image: "wN", vertical: '1', horizontal: 'B' },
+        { image: "wN", vertical: '1', horizontal: 'G' },
+        { image: "wB", vertical: '1', horizontal: 'C' },
+        { image: "wB", vertical: '1', horizontal: 'F' },
+        { image: "wR", vertical: '1', horizontal: 'A' },
+        { image: "wR", vertical: '1', horizontal: 'H' },
+        { image: "wQ", vertical: '1', horizontal: 'D' },
+        { image: "wK", vertical: '1', horizontal: 'E' },
+        { image: "wP", vertical: '2', horizontal: 'A' },
+        { image: "wP", vertical: '2', horizontal: 'B' },
+        { image: "wP", vertical: '2', horizontal: 'C' },
+        { image: "wP", vertical: '2', horizontal: 'D' },
+        { image: "wP", vertical: '2', horizontal: 'E' },
+        { image: "wP", vertical: '2', horizontal: 'F' },
+        { image: "wP", vertical: '2', horizontal: 'G' },
+        { image: "wP", vertical: '2', horizontal: 'H' }
+        // Add other pieces here
+    ];
+
+    let image = ""; // This will now be updated reactively
+
+    function getImage(vertical: string, horizontal: string) {
+        for (let piece of pieces) {
+            if (piece.horizontal === horizontal && piece.vertical === vertical) {
+                return piece.image;
+            }
+        }
+        return "";
+    }
+
 </script>
 
 <div class="chessboard">
     {#each verticalAxis as vertical}
         {#each horizontalAxis as horizontal}
-            {#if (horizontal.charCodeAt(0) + vertical.charCodeAt(0)) % 2 === 0}
-                <div class="black-tile">
-                    <img src="/Chess-Pieces/Kiwen-suwi/bP.svg" alt=""/>
-                </div>
-            {:else}
-                <div class="white-tile">
-                </div>
-            {/if}
+            <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} />
         {/each}
     {/each}
 </div>
@@ -28,24 +78,5 @@
         background-color: red;
         box-sizing: border-box;
     }
-    .white-tile {
-        display: grid;
-        place-items: center;
-        background-color: #639e61;
-    }
-    .black-tile {
-        display: grid;
-        place-items: center;
-        background-color: #3f835c;
-    }
-
-    .black-tile img {
-        width: 80%;
-        height: 80%;
-    }
-
-    .white-tile img {
-        width: 80%;
-        height: 80%;
-    }
 </style>
+
