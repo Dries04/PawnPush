@@ -66,17 +66,22 @@
     }
 
     // grab the piece
-    function handleMouseEvent(event: MouseEvent) {
-        console.log(event.target);
-        
+    let activePiece: HTMLElement | null = null;
+
+    function handleMouseMove(event: MouseEvent) {
+
     }
 
+    // move the piece
+    function handleMouseClick(event: MouseEvent) {
+
+    }
 
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="chessboard" on:click={handleMouseEvent}>
+<div class="chessboard" on:click={handleMouseClick} on:drag={handleMouseMove} >
     {#each verticalAxis as vertical}
         {#each horizontalAxis as horizontal}
             <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={"/Chess-Pieces/Kiwen-suwi/"}/>

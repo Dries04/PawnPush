@@ -39,7 +39,7 @@
 
 	#right {
 		background-color: var(--color-bg-2);
-		margin-right: 3em;
+		margin-right: 3%;
 	}
 
 </style>

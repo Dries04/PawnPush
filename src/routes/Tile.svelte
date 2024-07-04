@@ -45,8 +45,10 @@
     }
 
     .tile-img {
-        height: 80%;
-        width: 80%;
+        /* height: 85%;
+        width: 85%; */
+        height: 80px;
+        width: 80px;
     }
 
     .tile-img:hover {
