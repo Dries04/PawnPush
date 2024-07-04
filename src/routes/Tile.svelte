@@ -9,7 +9,7 @@
         <div class="black-tile"></div>
     {:else}
         <div class="black-tile">
-            <div class="black-tile-img" style={`background-image: url(${Chess_Pieces_style}${image}.svg); 
+            <div class="tile-img" style={`background-image: url(${Chess_Pieces_style}${image}.svg); 
                 background-repeat: no-repeat; 
                 background-position: center; 
                 background-size: cover;`}>
@@ -21,7 +21,7 @@
         <div class="white-tile"></div>
     {:else}
         <div class="white-tile">
-            <div class="white-tile-img" style={`background-image: url(${Chess_Pieces_style}${image}.svg); 
+            <div class="tile-img" style={`background-image: url(${Chess_Pieces_style}${image}.svg); 
                 background-repeat: no-repeat; 
                 background-position: center; 
                 background-size: cover;`}>
@@ -44,14 +44,17 @@
         width: 100%;
     }
 
-    .black-tile-img {
+    .tile-img {
         height: 80%;
         width: 80%;
     }
 
-    .white-tile-img {
-        height: 80%;
-        width: 80%;
+    .tile-img:hover {
+        cursor: grab;
+    }
+
+    .tile-img:active {
+        cursor: grabbing;
     }
 
 </style>

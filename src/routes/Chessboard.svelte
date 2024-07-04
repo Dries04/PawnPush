@@ -56,8 +56,6 @@
         { image: "wP", vertical: '2', horizontal: 'H' }
     ];
 
-    let image = ""; // This will now be updated reactively
-
     function getImage(vertical: string, horizontal: string) {
         for (let piece of pieces) {
             if (piece.horizontal === horizontal && piece.vertical === vertical) {
@@ -67,9 +65,18 @@
         return "";
     }
 
+    // grab the piece
+    function handleMouseEvent(event: MouseEvent) {
+        console.log(event.target);
+        
+    }
+
+
 </script>
 
-<div class="chessboard">
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div class="chessboard" on:click={handleMouseEvent}>
     {#each verticalAxis as vertical}
         {#each horizontalAxis as horizontal}
             <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={"/Chess-Pieces/Kiwen-suwi/"}/>
