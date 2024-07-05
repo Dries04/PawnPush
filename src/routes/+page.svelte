@@ -1,6 +1,6 @@
 <script>
 	import Chessboard from './Chessboard.svelte';
-  import Information from './Information.svelte';
+  	import Information from './Information.svelte';
 	import './styles.css';
 
 </script>
@@ -39,7 +39,8 @@
 
 	#right {
 		background-color: var(--color-bg-2);
-		margin-right: 3%;
+		margin-right: 4%;
+		margin-left: 3%;
 	}
 
 </style>
