@@ -65,6 +65,13 @@
         return "";
     }
 
+    // chessboard boundary (When piece is dragged outside of the chessboard, the piece will be placed in the last position of the chessboard)
+    export function boundaryCheck(x: number, y: number) {
+
+    }
+    
+    
+
     // grab the piece
     let movingPiece: HTMLElement | null = null;
 
@@ -93,7 +100,7 @@
 
             target.style.left = `${x}px`;
             target.style.top = `${y}px`;
-
+            target.style.zIndex = "1000";
         }
 
     }
@@ -102,6 +109,7 @@
     function handleMouseUp(event: MouseEvent) {
         const target = event.target as HTMLElement;
         if(movingPiece) {
+            target.style.zIndex = "0";
             movingPiece.style.cursor = "pointer";
             movingPiece = null;
         }

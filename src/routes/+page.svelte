@@ -1,5 +1,6 @@
 <script>
 	import Chessboard from './Chessboard.svelte';
+  import Information from './Information.svelte';
 	import './styles.css';
 
 </script>
@@ -14,8 +15,7 @@
 		<Chessboard />
 	</div>
 	<div class="half-screen" id="right">
-		<h1> Dit is rechts </h1>
-		<p> Dit is een test </p>
+		<Information />
 	</div>
 </div>
 
