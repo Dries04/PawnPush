@@ -66,22 +66,52 @@
     }
 
     // grab the piece
-    let activePiece: HTMLElement | null = null;
+    let movingPiece: HTMLElement | null = null;
 
-    function handleMouseMove(event: MouseEvent) {
-
+    function handleMouseDown(event: MouseEvent) {
+        const target = event.target as HTMLElement;
+        if( target.classList.contains("tile-img")) {
+            movingPiece = target;
+            target.style.cursor = "grabbing";
+            const x = event.clientX - 75/2;
+            const y = event.clientY - 75/2;
+            target.style.position = "absolute";
+            target.style.left = `${x}px`;
+            target.style.top = `${y}px`;
+        }
     }
 
     // move the piece
-    function handleMouseClick(event: MouseEvent) {
+    function handleMouseMove(event: MouseEvent) {
+        const target = event.target as HTMLElement;
+        if(movingPiece && target.classList.contains("tile-img")) {
+            target.style.cursor = "grab";
 
+            const x = event.clientX - 75/2;
+            const y = event.clientY - 75/2;
+            target.style.position = "absolute";
+
+            target.style.left = `${x}px`;
+            target.style.top = `${y}px`;
+
+        }
+
+    }
+
+    // drop the piece
+    function handleMouseUp(event: MouseEvent) {
+        const target = event.target as HTMLElement;
+        if(movingPiece) {
+            movingPiece.style.cursor = "pointer";
+            movingPiece = null;
+        }
     }
 
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="chessboard" on:click={handleMouseClick} on:drag={handleMouseMove} >
+<div class="chessboard" on:mousemove={handleMouseMove} on:mousedown={handleMouseDown} on:mouseup={handleMouseUp}  >
     {#each verticalAxis as vertical}
         {#each horizontalAxis as horizontal}
             <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={"/Chess-Pieces/Kiwen-suwi/"}/>

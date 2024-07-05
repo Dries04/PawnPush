@@ -47,16 +47,16 @@
     .tile-img {
         /* height: 85%;
         width: 85%; */
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
     }
 
     .tile-img:hover {
-        cursor: grab;
+        cursor: pointer;
     }
 
     .tile-img:active {
-        cursor: grabbing;
+        cursor: grab;
     }
 
 </style>
