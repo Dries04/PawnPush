@@ -2,10 +2,29 @@
     import './styles.css';
 
     function goToProfile() {
-        console.log("Profile");
+        var infoTabs = document.querySelectorAll('.info-tab');
+  
+        // Hide all content divs
+        for (var i = 0; i < infoTabs.length; i++) {
+            infoTabs[i].classList.remove('active');
+        }
+        
+        // Show the selected content div
+        //infoTabs[1].style.visibility = 'visible'; // Make sure it's visible before adding 'active'
+        infoTabs[0].classList.add('active');
     }
-    function goToSettings() {
 
+    function goToSettings() {
+        var infoTabs = document.querySelectorAll('.info-tab');
+  
+        // Hide all content divs
+        for (var i = 0; i < infoTabs.length; i++) {
+            infoTabs[i].classList.remove('active');
+        }
+        
+        // Show the selected content div
+        //infoTabs[1].style.visibility = 'visible'; // Make sure it's visible before adding 'active'
+        infoTabs[1].classList.add('active');
     }
 
 </script>
@@ -19,8 +38,19 @@
             <button class="button-2" id="settings" on:click={goToSettings}>Settings<i id ="settings-icon" class="fa-solid fa-gear"></i></button>
         </h2>
     </div>
+    <div class="info-tab active">
+        <h2>INFO tab 1</h2>
+        <p>Hello dit is een test</p>
+    </div>
+    <div class="info-tab">
+        <h2>INFO tab 2</h2>
+        <p>Heykes dit is de tweede tab</p>
+    </div>
+    <div class="info-tab">
+        <h2>INFO tab 3</h2>
+        <p>hoihoi dit is het derde tab</p>
+    </div>
 </div>
-<div></div>
 
 <style>
     .information-container {
@@ -38,6 +68,19 @@
         padding: 0;
         border: 0;
         float: right;
+    }
+
+    /* Info tabs */
+
+    .info-tab {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .info-tab.active {
+        opacity: 1;
+        visibility: visible;
     }
 
     /* button-styling */
@@ -83,6 +126,5 @@
         color: var(--color-text-2);
         transition: 0.4s;
     }
-
 
 </style>
