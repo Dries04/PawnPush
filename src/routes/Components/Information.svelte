@@ -1,13 +1,5 @@
 <script>
-    import './styles.css';
-
-    function goToProfile() {
-        console.log("Profile");
-    }
-
-    function goToSettings() {
-        console.log("Settings");
-    }
+    import '.././styles.css';
 
 </script>
 

@@ -1,8 +1,8 @@
 <script>
-	import Chessboard from './Chessboard.svelte';
-  	import Information from './Information.svelte';
-	import Settings from './Settings.svelte';
-	import Profile from './Profile.svelte';
+	import Chessboard from './Components/Chessboard.svelte';
+  	import Information from './Components/Information.svelte';
+	import Settings from './Components/Settings.svelte';
+	import Profile from './Components/Profile.svelte';
 	import './styles.css';
 
 	let infotab = "info-tab-1";
@@ -70,7 +70,7 @@
 
 	#right {
 		background-color: var(--color-bg-2);
-		margin-right: 4%;
+		margin-right: 5%;
 		margin-left: 3%;
 	}
 
