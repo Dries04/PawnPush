@@ -1,22 +1,117 @@
 <script>
+	import Settings from './Settings.svelte';
     import '.././styles.css';
 
-</script>
+    function goToProfile(){
+        const profileDiv = document.querySelector('.Profile-div');
+        const settingsDiv = document.querySelector('.Settings-div');
+        const infoDiv = document.querySelector('.Info-div');
 
-<div class="info-tab">
-    <h2>INFO tab 1</h2>
-    <p>Hello dit is een test</p>
+        // @ts-ignore
+        profileDiv.style.visibility = "visible";
+        // @ts-ignore
+        settingsDiv.style.visibility = "hidden";
+        // @ts-ignore
+        infoDiv.style.visibility = "hidden";
+    }
+    function goToSettings(){
+        const profileDiv = document.querySelector('.Profile-div');
+        const settingsDiv = document.querySelector('.Settings-div');
+        const infoDiv = document.querySelector('.Info-div');
+
+        // @ts-ignore
+        profileDiv.style.visibility = "hidden";
+        // @ts-ignore
+        settingsDiv.style.visibility = "visible";
+        // @ts-ignore
+        infoDiv.style.visibility = "hidden";
+    }
+    function goToHome(){
+        const profileDiv = document.querySelector('.Profile-div');
+        const settingsDiv = document.querySelector('.Settings-div');
+        const infoDiv = document.querySelector('.Info-div');
+
+        // @ts-ignore
+        profileDiv.style.visibility = "hidden";
+        // @ts-ignore
+        settingsDiv.style.visibility = "hidden";
+        // @ts-ignore
+        infoDiv.style.visibility = "visible";
+    }
+
+    // Settings
+    // Chesspieces size
+    let ChessPiecesSize = "large";
+    let sizeChesspieces = ["small", "medium", "large", "huge", "gigantic"];
+
+    function NextSizeChesspieces() {
+        let index = sizeChesspieces.indexOf(ChessPiecesSize);
+        index++;
+        if (index >= sizeChesspieces.length) {
+            index = 0;
+        }
+        ChessPiecesSize = sizeChesspieces[index];
+    }
+
+</script>
+<!-- NAVIGATION on top right -->
+<div id="settings-profile" class="information-container">
+    <h2 class="settings-profile">
+        <button class="button-2" id="profile" on:click={goToProfile} >Profile<i id="profile-icon" class="fa-solid fa-user"></i></button>
+    </h2>
+    <h2 class="settings-profile">
+        <button class="button-2" id="settings" on:click={goToSettings}>Settings<i id ="settings-icon" class="fa-solid fa-gear"></i></button>
+    </h2>
+    <h2 class="settings-profile">
+        <button class="button-2" id="home" on:click={goToHome}>Home<i id ="home-icon" class="fa-solid fa-home"></i></button>
+    </h2>
 </div>
-<div class="info-tab">
-    <h2>INFO tab 2</h2>
-    <p>Heykes dit is de tweede tab</p>
+
+
+<div class="Main-div">
+    <!-- INFO DIV -->
+    <div class="Info-div">
+        <h2>INFO tab 1</h2>
+        <p>Hello dit is een test</p>
+        <button>Dit is een test</button>
+    </div>
+
+    <!-- SETTINGS DIV -->
+    <div class="Settings-div">
+        <h1>Settings</h1>
+        <hr>
+        <button class="button-1" on:click={NextSizeChesspieces}>Size chesspieces: {ChessPiecesSize}</button>
+        <button class="button-1">test button</button>
+        <button class="button-1">test button nog eens</button>
+        <button class="button-1">Wat is me dit</button>
+    </div>
+
+    <!-- PROFILE DIV -->
+    <div class="Profile-div">
+        ook een test 
+    </div>
 </div>
-<div class="info-tab">
-    <h2>INFO tab 3</h2>
-    <p>hoihoi dit is het derde tab</p>
-</div>
+
 
 <style>
-
+    .Main-div {
+        margin-top: 10%;
+        position: relative;
+    }
+    .Info-div {
+        position: absolute;
+        z-index: 1;
+        visibility: visible;
+    }
+    .Settings-div {
+        position: absolute;
+        z-index: 2;
+        visibility: hidden;
+    }
+    .Profile-div {
+        position: absolute;
+        z-index: 3;
+        visibility: hidden;
+    }
 
 </style>
