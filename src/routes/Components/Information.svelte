@@ -1,5 +1,4 @@
 <script>
-	import Settings from './Settings.svelte';
     import '.././styles.css';
 
     function goToProfile(){
@@ -54,26 +53,24 @@
     }
 
 </script>
+
 <!-- NAVIGATION on top right -->
-<div id="settings-profile" class="information-container">
-    <h2 class="settings-profile">
+<div>
+    <h2>
         <button class="button-2" id="profile" on:click={goToProfile} >Profile<i id="profile-icon" class="fa-solid fa-user"></i></button>
     </h2>
-    <h2 class="settings-profile">
+    <h2>
         <button class="button-2" id="settings" on:click={goToSettings}>Settings<i id ="settings-icon" class="fa-solid fa-gear"></i></button>
     </h2>
-    <h2 class="settings-profile">
+    <h2>
         <button class="button-2" id="home" on:click={goToHome}>Home<i id ="home-icon" class="fa-solid fa-home"></i></button>
     </h2>
 </div>
 
-
 <div class="Main-div">
     <!-- INFO DIV -->
     <div class="Info-div">
-        <h2>INFO tab 1</h2>
-        <p>Hello dit is een test</p>
-        <button>Dit is een test</button>
+        <h1>Repertoire Builder</h1>
     </div>
 
     <!-- SETTINGS DIV -->
@@ -88,30 +85,45 @@
 
     <!-- PROFILE DIV -->
     <div class="Profile-div">
-        ook een test 
+        <h1>Profile</h1>
+        placeholder for profile, placeholder for profile
     </div>
 </div>
 
 
 <style>
+    /* big divs */
     .Main-div {
         margin-top: 10%;
         position: relative;
     }
     .Info-div {
+        width: 100%;
+        height: 100%;
         position: absolute;
         z-index: 1;
         visibility: visible;
     }
     .Settings-div {
+        width: 100%;
+        height: 100%;
         position: absolute;
         z-index: 2;
         visibility: hidden;
     }
     .Profile-div {
+        width: 100%;
+        height: 100%;
         position: absolute;
         z-index: 3;
         visibility: hidden;
     }
+
+    /* standard html */
+    h1{
+        margin-left: 10%;
+    }
+
+    /* buttons */
 
 </style>
