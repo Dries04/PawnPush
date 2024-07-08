@@ -124,6 +124,4 @@
         margin-left: 10%;
     }
 
-    /* buttons */
-
 </style>
