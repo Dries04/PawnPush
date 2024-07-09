@@ -2,6 +2,7 @@
     export let number: number = 0;
     export let image: string = "";
     export let Chess_Pieces_style: string = "/Chess-Pieces/Kiwen-suwi/";
+    
 </script>
 
 {#if number % 2 === 0}

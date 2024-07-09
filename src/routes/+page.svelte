@@ -1,6 +1,6 @@
 <script>
 	import Chessboard from './Components/Chessboard.svelte';
-  	import Information from './Components/Information.svelte';
+	import Information from './Components/Information.svelte';
 	import './styles.css';
 
 </script>

@@ -1,5 +1,15 @@
-<script>
+<script lang="ts" context="module">
     import '.././styles.css';
+
+    interface Settings{
+        ChessPiecesStyle: string;
+        ChessPiecesSize: string;
+    }
+
+    let ChessPiecesSize = "large";
+    let ChessPiecesStyle = "abstract";
+
+    export type { Settings };
 
     function goToProfile(){
         const profileDiv = document.querySelector('.Profile-div');
@@ -40,7 +50,7 @@
 
     // Settings
     // Chesspieces size
-    let ChessPiecesSize = "large";
+    
     let sizeChesspieces = ["small", "medium", "large", "huge", "gigantic"];
 
     function NextSizeChesspieces() {
@@ -52,8 +62,8 @@
         ChessPiecesSize = sizeChesspieces[index];
     }
     // Chesspieces style
-    let ChessPiecesStyle = "abstract";
-    let styleChesspieces = ["classic", "modern", "funky", "futuristic", "abstract"];
+    
+    let styleChesspieces = ["classic", "modern", "pixel", "futuristic", "abstract"];
 
     function NextStyleChesspieces() {
         let index = styleChesspieces.indexOf(ChessPiecesStyle);

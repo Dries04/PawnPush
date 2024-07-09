@@ -64,6 +64,21 @@
         }
         return "";
     }
+    export let Chess_Pieces_style: string = "classic";
+    function getCorrectStyle(){
+        if(Chess_Pieces_style === "abstract"){
+            return "/Chess-Pieces/Kiwen-suwi/";
+        }
+        else if(Chess_Pieces_style === "classic"){
+            return "/Chess-Pieces/caliente/";
+        }
+        else if(Chess_Pieces_style === "modern"){
+            return "/Chess-Pieces/california/";
+        }
+        else if(Chess_Pieces_style === "pixel"){
+            return "/Chess-Pieces/Pixel/";
+        }
+    }
 
     // chessboard boundary (When piece is dragged outside of the chessboard, the piece will be placed in the last position of the chessboard)
     export function boundaryCheck(x: number, y: number) {
