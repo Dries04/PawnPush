@@ -49,6 +49,8 @@ hr{
 	padding: 1rem 1rem;
 	font-size: 1.3rem;
 	font-family: var(--font-1);
+	padding-left: 0;
+	padding-right: 0;
 	cursor: pointer;
 }
 .button-1:hover{

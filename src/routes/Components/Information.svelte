@@ -51,6 +51,18 @@
         }
         ChessPiecesSize = sizeChesspieces[index];
     }
+    // Chesspieces style
+    let ChessPiecesStyle = "abstract";
+    let styleChesspieces = ["classic", "modern", "funky", "futuristic", "abstract"];
+
+    function NextStyleChesspieces() {
+        let index = styleChesspieces.indexOf(ChessPiecesStyle);
+        index++;
+        if (index >= styleChesspieces.length) {
+            index = 0;
+        }
+        ChessPiecesStyle = styleChesspieces[index];
+    }
 
 </script>
 
@@ -76,9 +88,10 @@
     <!-- SETTINGS DIV -->
     <div class="Settings-div">
         <h1>Settings</h1>
+        <div class="sub-heading" >Board Style Settings</div>
         <hr>
-        <button class="button-1" on:click={NextSizeChesspieces}>Size chesspieces: {ChessPiecesSize}</button>
-        <button class="button-1">test button</button>
+        <button class="button-1" on:click={NextSizeChesspieces}><div id="size-left">Chesspieces Size</div> <div id="size-right">{ChessPiecesSize}</div></button>
+        <button class="button-1" on:click={NextStyleChesspieces}><div id="size-left">Chesspieces Style</div> <div id="size-right">{ChessPiecesStyle}</div></button>
         <button class="button-1">test button nog eens</button>
         <button class="button-1">Wat is me dit</button>
     </div>
@@ -106,7 +119,7 @@
     }
     .Settings-div {
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
         position: absolute;
         z-index: 2;
         visibility: hidden;
@@ -124,4 +137,20 @@
         margin-left: 10%;
     }
 
+    /* left - right */
+    #size-left {
+        float: left;
+        margin-left: 10%;
+        padding: 0px;
+    }
+    #size-right {
+        float: right;
+        margin-right: 10%;
+    }
+
+    /* Others */
+    .sub-heading {
+        margin-left: 10%;
+        color: var(--color-text-1);
+    }
 </style>
