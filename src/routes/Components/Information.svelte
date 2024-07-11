@@ -1,13 +1,23 @@
-<script lang="ts" context="module">
+<script lang="ts">
     import '.././styles.css';
+    import {createEventDispatcher} from 'svelte';
+    const dispatch = createEventDispatcher();
+
+    function notifyParent() {
+        dispatch('message', {
+            message: {
+                ChessPiecesSize: ChessPiecesSize,
+                ChessPiecesStyle: ChessPiecesStyle,
+                ChessBoardStyle: ChessBoardStyle
+            }
+        });
+    }
 
     interface Settings{
         ChessPiecesStyle: string;
         ChessPiecesSize: string;
+        ChessBoardStyle: string;
     }
-
-    let ChessPiecesSize = "large";
-    let ChessPiecesStyle = "abstract";
 
     export type { Settings };
 
@@ -50,6 +60,7 @@
 
     // Settings
     // Chesspieces size
+    let ChessPiecesSize = "large";
     
     let sizeChesspieces = ["small", "medium", "large", "huge", "gigantic"];
 
@@ -60,10 +71,13 @@
             index = 0;
         }
         ChessPiecesSize = sizeChesspieces[index];
+        notifyParent();
     }
     // Chesspieces style
     
     let styleChesspieces = ["classic", "modern", "pixel", "futuristic", "abstract"];
+
+    let ChessPiecesStyle = "abstract";
 
     function NextStyleChesspieces() {
         let index = styleChesspieces.indexOf(ChessPiecesStyle);
@@ -72,6 +86,22 @@
             index = 0;
         }
         ChessPiecesStyle = styleChesspieces[index];
+        notifyParent();
+    }
+
+    // Chessboard style
+
+    let styleChessboard = ["default", "classic", "modern"];
+    let ChessBoardStyle = "default";
+
+    function NextStyleChessboard(){
+        let index = styleChessboard.indexOf(ChessBoardStyle);
+        index++;
+        if(index >= styleChessboard.length){
+            index = 0;
+        }
+        ChessBoardStyle = styleChessboard[index];
+        notifyParent();
     }
 
 </script>
@@ -102,7 +132,7 @@
         <hr>
         <button class="button-1" on:click={NextSizeChesspieces}><div id="size-left">Chesspieces Size</div> <div id="size-right">{ChessPiecesSize}</div></button>
         <button class="button-1" on:click={NextStyleChesspieces}><div id="size-left">Chesspieces Style</div> <div id="size-right">{ChessPiecesStyle}</div></button>
-        <button class="button-1">test button nog eens</button>
+        <button class="button-1" on:click={NextStyleChessboard}><div id="size-left">Chessboard Style</div> <div id="size-right"> {ChessBoardStyle}</div></button>
         <button class="button-1">Wat is me dit</button>
     </div>
 
@@ -161,6 +191,8 @@
     /* Others */
     .sub-heading {
         margin-left: 10%;
+        margin-bottom: 5%;
+        margin-top: 5%;
         color: var(--color-text-1);
     }
 </style>

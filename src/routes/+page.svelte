@@ -1,7 +1,24 @@
-<script>
+<script lang="ts">
 	import Chessboard from './Components/Chessboard.svelte';
 	import Information from './Components/Information.svelte';
 	import './styles.css';
+
+	let ChessPiecesSize: string;
+	let ChessPiecesStyle: string;
+	let ChessBoardStyle: string;
+
+	function handleMessage(event: { detail: { message: { ChessPiecesSize: string; ChessPiecesStyle: string; ChessBoardStyle: string; }; }; }) {
+		if(event.detail.message.ChessPiecesSize){
+			ChessPiecesSize = event.detail.message.ChessPiecesSize;
+		}
+		if(event.detail.message.ChessPiecesStyle){
+			ChessPiecesStyle = event.detail.message.ChessPiecesStyle;
+		}
+		if(event.detail.message.ChessBoardStyle){
+			ChessBoardStyle = event.detail.message.ChessBoardStyle;
+		}
+		console.log("+page, ", ChessPiecesSize, ChessPiecesStyle, ChessBoardStyle);
+	}
 
 </script>
 
@@ -12,10 +29,12 @@
 
 <div class="container">
 	<div class="half-screen" id="left">
-		<Chessboard />
+		{#key ChessPiecesStyle}
+			<Chessboard Chess_Pieces_style={ChessPiecesStyle}/>
+		{/key}
 	</div>
 	<div class="half-screen" id="right">
-		<Information />
+		<Information on:message={handleMessage}/>
 	</div>
 </div>
 

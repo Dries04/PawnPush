@@ -64,8 +64,10 @@
         }
         return "";
     }
-    export let Chess_Pieces_style: string = "classic";
+
+    export let Chess_Pieces_style: string = "pixel";
     function getCorrectStyle(){
+        console.log(Chess_Pieces_style);
         if(Chess_Pieces_style === "abstract"){
             return "/Chess-Pieces/Kiwen-suwi/";
         }
@@ -77,6 +79,8 @@
         }
         else if(Chess_Pieces_style === "pixel"){
             return "/Chess-Pieces/Pixel/";
+        }else if(Chess_Pieces_style === "futuristic"){
+            return "/Chess-Pieces/california/";
         }
     }
 
@@ -137,7 +141,7 @@
 <div class="chessboard" on:mousemove={handleMouseMove} on:mousedown={handleMouseDown} on:mouseup={handleMouseUp}  >
     {#each verticalAxis as vertical}
         {#each horizontalAxis as horizontal}
-            <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={"/Chess-Pieces/Kiwen-suwi/"}/>
+            <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={getCorrectStyle()}/>
         {/each}
     {/each}
 </div>
