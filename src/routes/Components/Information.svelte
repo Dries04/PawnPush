@@ -75,7 +75,7 @@
     }
     // Chesspieces style
     
-    let styleChesspieces = ["classic", "modern", "pixel", "futuristic", "abstract"];
+    let styleChesspieces = ["classic", "modern", "pixel", "futuristic", "abstract", "weird", "funky", "crazy"];
 
     let ChessPiecesStyle = "abstract";
 

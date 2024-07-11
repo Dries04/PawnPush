@@ -67,7 +67,6 @@
 
     export let Chess_Pieces_style: string = "pixel";
     function getCorrectStyle(){
-        console.log(Chess_Pieces_style);
         if(Chess_Pieces_style === "abstract"){
             return "/Chess-Pieces/Kiwen-suwi/";
         }
@@ -80,7 +79,11 @@
         else if(Chess_Pieces_style === "pixel"){
             return "/Chess-Pieces/Pixel/";
         }else if(Chess_Pieces_style === "futuristic"){
-            return "/Chess-Pieces/california/";
+            return "/Chess-Pieces/kosal/";
+        }else if(Chess_Pieces_style === "weird"){
+            return "/Chess-Pieces/monarchy/";
+        }else if(Chess_Pieces_style === "funky"){
+            return "/Chess-Pieces/cburnett/";
         }
     }
 

@@ -17,7 +17,6 @@
 		if(event.detail.message.ChessBoardStyle){
 			ChessBoardStyle = event.detail.message.ChessBoardStyle;
 		}
-		console.log("+page, ", ChessPiecesSize, ChessPiecesStyle, ChessBoardStyle);
 	}
 
 </script>
