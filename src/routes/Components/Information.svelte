@@ -104,6 +104,14 @@
         notifyParent();
     }
 
+    // Reset to default values
+    function StyleToDefault(){
+        ChessPiecesSize = "large";
+        ChessPiecesStyle = "abstract";
+        ChessBoardStyle = "default";
+        notifyParent();
+    }
+
 </script>
 
 <!-- NAVIGATION on top right -->
@@ -133,7 +141,8 @@
         <button class="button-1" on:click={NextSizeChesspieces}><div id="size-left">Chesspieces Size</div> <div id="size-right">{ChessPiecesSize}</div></button>
         <button class="button-1" on:click={NextStyleChesspieces}><div id="size-left">Chesspieces Style</div> <div id="size-right">{ChessPiecesStyle}</div></button>
         <button class="button-1" on:click={NextStyleChessboard}><div id="size-left">Chessboard Style</div> <div id="size-right"> {ChessBoardStyle}</div></button>
-        <button class="button-1">Wat is me dit</button>
+        <div></div>
+        <button class="button-1" on:click={StyleToDefault}>reset to default values</button>
     </div>
 
     <!-- PROFILE DIV -->

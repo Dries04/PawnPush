@@ -30,7 +30,9 @@
 	<div class="half-screen" id="left">
 		{#key ChessPiecesStyle}
 			{#key ChessBoardStyle}
-				<Chessboard Chess_Pieces_style={ChessPiecesStyle} Chess_Board_Style={ChessBoardStyle}/>
+				{#key ChessPiecesSize}
+					<Chessboard Chess_Pieces_style={ChessPiecesStyle} Chess_Board_Style={ChessBoardStyle} Chess_Pieces_Size={ChessPiecesSize}/>
+				{/key}
 			{/key}	
 		{/key}
 	</div>

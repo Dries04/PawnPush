@@ -92,6 +92,9 @@
 
     export let Chess_Board_Style: string = "default";
 
+    export let Chess_Pieces_Size: string = "large";
+
+
     // chessboard boundary (When piece is dragged outside of the chessboard, the piece will be placed in the last position of the chessboard)
     export function boundaryCheck(x: number, y: number) {
 
@@ -149,7 +152,7 @@
 <div class="chessboard" on:mousemove={handleMouseMove} on:mousedown={handleMouseDown} on:mouseup={handleMouseUp}  >
     {#each verticalAxis as vertical}
         {#each horizontalAxis as horizontal}
-            <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={getCorrectStyle()} Chess_Board_Style={Chess_Board_Style}/>
+            <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={getCorrectStyle()} Chess_Board_Style={Chess_Board_Style} Chess_Pieces_Size={Chess_Pieces_Size}/>
         {/each}
     {/each}
 </div>

@@ -3,7 +3,8 @@
     export let image: string = "";
     export let Chess_Pieces_style: string = "/Chess-Pieces/Kiwen-suwi/";
     export let Chess_Board_Style: string = "default";
-    
+    export let Chess_Pieces_Size: string = "large";
+
 </script>
 
 {#if number % 2 === 0}
@@ -11,9 +12,9 @@
         <div class="black-tile{Chess_Board_Style}"></div>
     {:else}
         <div class="black-tile{Chess_Board_Style}">
-            <div class="tile-img" style={`background-image: url(${Chess_Pieces_style}${image}.svg); 
-                background-repeat: no-repeat; 
-                background-position: center; 
+            <div class="tile-img{Chess_Pieces_Size}" style={`background-image: url(${Chess_Pieces_style}${image}.svg);
+                background-repeat: no-repeat;
+                background-position: center;
                 background-size: cover;`}>
             </div>
         </div>
@@ -23,15 +24,15 @@
         <div class="white-tile{Chess_Board_Style}"></div>
     {:else}
         <div class="white-tile{Chess_Board_Style}">
-            <div class="tile-img" style={`background-image: url(${Chess_Pieces_style}${image}.svg); 
-                background-repeat: no-repeat; 
-                background-position: center; 
+            <div class="tile-img{Chess_Pieces_Size}" style={`background-image: url(${Chess_Pieces_style}${image}.svg);
+                background-repeat: no-repeat;
+                background-position: center;
                 background-size: cover;`}>
             </div>
         </div>
     {/if}
 {/if}
-    
+
 <style>
     /* Chessboard styles */
     /* DEFAULT */
@@ -87,12 +88,49 @@
         width: 100%;
     }
 
-    .tile-img {
+    /* Chess Piece Size */
+    /* small */
+    .tile-imgsmall {
+        /* height: 50%;
+        width: 50%; */
+        height: 35px;
+        width: 35px;
+    }
+    /* medium */
+    .tile-imgmedium {
+        /* height: 65%;
+        width: 65%; */
+        height: 55px;
+        width: 55px;
+    }
+    /* large */
+    .tile-imglarge {
         /* height: 85%;
         width: 85%; */
+        height: 75px;
+        width: 75px;
+    }
+    /* extra-large */
+    .tile-imghuge {
+        /* height: 100%;
+        width: 100%; */
+        height: 95px;
+        width: 95px;
+    }
+    /* gigantic */
+    .tile-imggigantic {
+        /* height: 120%;
+        width: 120%; */
+        height: 115px;
+        width: 115px;
+    }
+
+    /* .tile-img {
+        height: 85%;
+        width: 85%;
         height: 70px;
         width: 70px;
-    }
+    } */
 
     .tile-img:hover {
         cursor: pointer;
