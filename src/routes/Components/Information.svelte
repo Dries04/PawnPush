@@ -75,7 +75,7 @@
     }
     // Chesspieces style
     
-    let styleChesspieces = ["classic", "modern", "pixel", "futuristic", "abstract", "weird", "funky", "crazy"];
+    let styleChesspieces = ["classic", "modern", "pixel", "futuristic", "abstract", "weird", "funky"];
 
     let ChessPiecesStyle = "abstract";
 
@@ -91,7 +91,7 @@
 
     // Chessboard style
 
-    let styleChessboard = ["default", "classic", "modern"];
+    let styleChessboard = ["default", "classic", "modern", "chesscom"];
     let ChessBoardStyle = "default";
 
     function NextStyleChessboard(){

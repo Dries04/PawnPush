@@ -65,7 +65,7 @@
         return "";
     }
 
-    export let Chess_Pieces_style: string = "pixel";
+    export let Chess_Pieces_style: string = "abstract";
     function getCorrectStyle(){
         if(Chess_Pieces_style === "abstract"){
             return "/Chess-Pieces/Kiwen-suwi/";
@@ -78,14 +78,19 @@
         }
         else if(Chess_Pieces_style === "pixel"){
             return "/Chess-Pieces/Pixel/";
-        }else if(Chess_Pieces_style === "futuristic"){
+        }
+        else if(Chess_Pieces_style === "futuristic"){
             return "/Chess-Pieces/kosal/";
-        }else if(Chess_Pieces_style === "weird"){
+        }
+        else if(Chess_Pieces_style === "weird"){
             return "/Chess-Pieces/monarchy/";
-        }else if(Chess_Pieces_style === "funky"){
+        }
+        else if(Chess_Pieces_style === "funky"){
             return "/Chess-Pieces/cburnett/";
         }
     }
+
+    export let Chess_Board_Style: string = "default";
 
     // chessboard boundary (When piece is dragged outside of the chessboard, the piece will be placed in the last position of the chessboard)
     export function boundaryCheck(x: number, y: number) {
@@ -144,7 +149,7 @@
 <div class="chessboard" on:mousemove={handleMouseMove} on:mousedown={handleMouseDown} on:mouseup={handleMouseUp}  >
     {#each verticalAxis as vertical}
         {#each horizontalAxis as horizontal}
-            <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={getCorrectStyle()}/>
+            <Tile number={(horizontal.charCodeAt(0) + vertical.charCodeAt(0))} image={getImage(vertical, horizontal)} Chess_Pieces_style={getCorrectStyle()} Chess_Board_Style={Chess_Board_Style}/>
         {/each}
     {/each}
 </div>

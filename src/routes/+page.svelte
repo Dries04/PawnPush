@@ -29,7 +29,9 @@
 <div class="container">
 	<div class="half-screen" id="left">
 		{#key ChessPiecesStyle}
-			<Chessboard Chess_Pieces_style={ChessPiecesStyle}/>
+			{#key ChessBoardStyle}
+				<Chessboard Chess_Pieces_style={ChessPiecesStyle} Chess_Board_Style={ChessBoardStyle}/>
+			{/key}	
 		{/key}
 	</div>
 	<div class="half-screen" id="right">
