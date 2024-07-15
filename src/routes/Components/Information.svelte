@@ -148,7 +148,6 @@
     <!-- PROFILE DIV -->
     <div class="Profile-div">
         <h1>Profile</h1>
-        placeholder for profile, placeholder for profile
     </div>
 </div>
 

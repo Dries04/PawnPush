@@ -106,23 +106,105 @@
     let movingPiece: HTMLElement | null = null;
 
     function handleMouseDown(event: MouseEvent) {
+        console.log(event);
         const target = event.target as HTMLElement;
-        if( target.classList.contains("tile-img")) {
+        if (target.classList.contains(`tile-img${Chess_Pieces_Size}`)) {
             movingPiece = target;
             target.style.cursor = "grabbing";
+
+            if(Chess_Pieces_Size === "small"){
+                const x = event.clientX - 35/2;
+                const y = event.clientY - 35/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+            }
+            else if(Chess_Pieces_Size === "medium"){
+                const x = event.clientX - 55/2;
+                const y = event.clientY - 55/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+            }
+            else if(Chess_Pieces_Size === "large"){
+                const x = event.clientX - 75/2;
+                const y = event.clientY - 75/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+            }
+            else if(Chess_Pieces_Size === "huge"){
+                const x = event.clientX - 95/2;
+                const y = event.clientY - 95/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+            }
+            else if(Chess_Pieces_Size === "gigantic"){
+                const x = event.clientX - 115/2;
+                const y = event.clientY - 115/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+            }
+            else{
+
             const x = event.clientX - 75/2;
             const y = event.clientY - 75/2;
             target.style.position = "absolute";
             target.style.left = `${x}px`;
             target.style.top = `${y}px`;
+            }
         }
     }
 
     // move the piece
     function handleMouseMove(event: MouseEvent) {
         const target = event.target as HTMLElement;
-        if(movingPiece && target.classList.contains("tile-img")) {
+        if(movingPiece && target.classList.contains(`tile-img${Chess_Pieces_Size}`)) {
             target.style.cursor = "grab";
+            
+            if(Chess_Pieces_Size === "small"){
+                const x = event.clientX - 35/2;
+                const y = event.clientY - 35/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+                target.style.zIndex = "1000";
+            }
+            else if(Chess_Pieces_Size === "medium"){
+                const x = event.clientX - 55/2;
+                const y = event.clientY - 55/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+                target.style.zIndex = "1000";
+            }
+            else if(Chess_Pieces_Size === "large"){
+                const x = event.clientX - 75/2;
+                const y = event.clientY - 75/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+                target.style.zIndex = "1000";
+            }
+            else if(Chess_Pieces_Size === "huge"){
+                const x = event.clientX - 95/2;
+                const y = event.clientY - 95/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+                target.style.zIndex = "1000";
+            }
+            else if(Chess_Pieces_Size === "gigantic"){
+                const x = event.clientX - 115/2;
+                const y = event.clientY - 115/2;
+                target.style.position = "absolute";
+                target.style.left = `${x}px`;
+                target.style.top = `${y}px`;
+                target.style.zIndex = "1000";
+            }
+            else{
 
             const x = event.clientX - 75/2;
             const y = event.clientY - 75/2;
@@ -131,6 +213,7 @@
             target.style.left = `${x}px`;
             target.style.top = `${y}px`;
             target.style.zIndex = "1000";
+            }
         }
 
     }
