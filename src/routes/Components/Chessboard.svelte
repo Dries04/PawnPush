@@ -1,4 +1,5 @@
 <script lang=ts>
+	import Chessboard from './Chessboard.svelte';
     import Tile from "./Tile.svelte";
 
     let horizontalAxis = ["A", "B", "C", "D", "E", "F", "G", "H"];
@@ -94,19 +95,10 @@
 
     export let Chess_Pieces_Size: string = "large";
 
-
-    // chessboard boundary (When piece is dragged outside of the chessboard, the piece will be placed in the last position of the chessboard)
-    export function boundaryCheck(x: number, y: number) {
-
-    }
-    
-    
-
     // grab the piece
     let movingPiece: HTMLElement | null = null;
 
     function handleMouseDown(event: MouseEvent) {
-        console.log(event);
         const target = event.target as HTMLElement;
         if (target.classList.contains(`tile-img${Chess_Pieces_Size}`)) {
             movingPiece = target;
@@ -221,7 +213,7 @@
     // drop the piece
     function handleMouseUp(event: MouseEvent) {
         const target = event.target as HTMLElement;
-        if(movingPiece) {
+       if(movingPiece) {
             target.style.zIndex = "0";
             movingPiece.style.cursor = "pointer";
             movingPiece = null;
