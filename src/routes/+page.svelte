@@ -3,13 +3,14 @@
 	import './styles.css';
 	import { Chess } from 'svelte-chess';
 
-	let ChessPiecesSize: string;
+	let ChessBoardSize: string;
 	let ChessPiecesStyle: string;
 	let ChessBoardStyle: string;
 
-	function handleMessage(event: { detail: { message: { ChessPiecesSize: string; ChessPiecesStyle: string; ChessBoardStyle: string; }; }; }) {
-		if(event.detail.message.ChessPiecesSize){
-			ChessPiecesSize = event.detail.message.ChessPiecesSize;
+	function handleMessage(event: { detail: { message: { ChessBoardSize: string; ChessPiecesStyle: string; ChessBoardStyle: string; }; }; }) {
+		if(event.detail.message.ChessBoardSize){
+			ChessBoardSize = event.detail.message.ChessBoardSize;
+			switchChessBoardSize();
 		}
 		if(event.detail.message.ChessPiecesStyle){
 			ChessPiecesStyle = event.detail.message.ChessPiecesStyle;
@@ -18,6 +19,26 @@
 			ChessBoardStyle = event.detail.message.ChessBoardStyle;
 		}
 	}
+
+	let chessboardWidth = 90;
+	let chessboardtop = 6;
+
+	function switchChessBoardSize(){
+		if(ChessBoardSize === "small"){
+			chessboardWidth = 40;
+			chessboardtop = 6;
+		}
+		else if(ChessBoardSize === "medium"){
+			chessboardWidth = 65;
+			chessboardtop = 6;
+		}
+		else if(ChessBoardSize === "large"){
+			chessboardWidth = 90;
+			chessboardtop = 6;
+		}
+	}
+
+	$: style_chessboardSize = `width: ${chessboardWidth}%; height: ${chessboardWidth}%; margin-top: ${chessboardtop}%; margin-left: ${chessboardtop}%;`;
 
 </script>
 
@@ -28,10 +49,14 @@
 
 <div class="container">
 	<div class="half-screen" id="left">
-		<div class="testtest">
-			<link rel="stylesheet" href="/chess-styles/chess-style.css" />
-			<Chess class="cg-paper"/>
-		</div>
+		{#key ChessBoardSize}
+			<div class="Chessboard_container" style={style_chessboardSize}> 
+				<link rel="stylesheet" href="/chess-styles/chess-style.css" />
+				{#key ChessPiecesStyle}
+					<Chess class="cg-paper" />
+				{/key}				
+			</div>
+		{/key}
 	</div>
 	<div class="half-screen" id="right">
 		<Information on:message={handleMessage}/>
@@ -49,12 +74,12 @@
 		height: 100%;
 	}
 
-	.testtest {
+	/* .Chessboard_container {
 		width: 90%;
 		height: 90%;
 		margin-top: 6%;
 		margin-left: 6%;
-	}
+	} */
 
 	#left {
 		background-color: var(--color-bg-1);

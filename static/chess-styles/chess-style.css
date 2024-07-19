@@ -81,7 +81,8 @@
   }
   
   .cg-paper.cg-wrap piece.ghost {
-    opacity: 0.3;
+    /* opacity: 0.3; */
+    opacity: 0;
   }
   
   .cg-paper.cg-wrap piece svg {
@@ -143,40 +144,52 @@
    */
   
   .cg-paper cg-board {
-   outline:solid 1px #93877E;
+   /* outline:solid 1px #93877E; */
    background-image: url("/Chess-Boards/TestBoard.png");
   }
   
   /** Interactive board square colors */
   .cg-paper cg-board square.move-dest {
-    background: radial-gradient(rgba(164, 97, 91, 0.8) 22%, rgba(0, 0, 0, 0) 0);
+    background: radial-gradient(rgba(255, 145, 0, 0.8) 22%, rgba(0, 0, 0, 0) 0);
   }
   .cg-paper cg-board square.move-dest:hover {
-    background: radial-gradient(rgba(164, 97, 91, 0.8) 44%, rgba(0, 0, 0, 0) 0);
+    background: radial-gradient(rgba(116, 116, 116, 0.8) 44%, rgba(0, 0, 0, 0) 0);
   }
   .cg-paper cg-board square.oc.move-dest {
-    background: radial-gradient(transparent 0%, transparent 80%, rgba(164, 97, 91, 0.8) 80%);
+    /* background: radial-gradient(transparent 0%, transparent 80%, rgba(255, 150, 50, 0.8) 80%); */
+    background: rgb(255, 150, 50, 0.8);
   }
   .cg-paper cg-board square.oc.move-dest:hover {
-    background: radial-gradient(transparent 0%, transparent 70%, rgba(164, 97, 91, 0.8) 75%);
+    background: rgba(255, 0, 0, 0.8);
   }
   .cg-paper cg-board square.selected {
-    background-color: rgba(164, 97, 91, 0.8);
+    background-color: rgba(255, 255, 106, 0.8);
   }
+
+  .cg-paper cg-board square.last-move {
+    background-color: rgba(255, 255, 106, 0.4);
+  }
+
+  .cg-paper cg-board square.check {
+    background-color: rgba(255, 0, 0, 0.4);
+  }
+  
+
+  
   
   /** Alternating colors in rank/file labels */
   .cg-paper.cg-wrap.orientation-white coords.ranks coord:nth-child(2n),
   .cg-paper.cg-wrap.orientation-white coords.files coord:nth-child(2n),
   .cg-paper.cg-wrap.orientation-black coords.ranks coord:nth-child(2n + 1),
   .cg-paper.cg-wrap.orientation-black coords.files coord:nth-child(2n + 1) {
-    color: rgba(72, 72, 72, 0.8);
+    color: rgba(255, 255, 255, 0.8);
   }
   
   .cg-paper.cg-wrap.orientation-black coords.ranks coord:nth-child(2n),
   .cg-paper.cg-wrap.orientation-black coords.files coord:nth-child(2n),
   .cg-paper.cg-wrap.orientation-white coords.ranks coord:nth-child(2n + 1),
   .cg-paper.cg-wrap.orientation-white coords.files coord:nth-child(2n + 1) {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
   }
   
   
@@ -185,7 +198,6 @@
    * Pieces
    *
    **/
-  
   
   .cg-paper.cg-wrap piece.pawn.white { background-image: url('.././Chess-Pieces/Kiwen-suwi/wP.svg'); }
   .cg-paper.cg-wrap piece.pawn.black { background-image: url('.././Chess-Pieces/Kiwen-suwi/bP.svg'); }

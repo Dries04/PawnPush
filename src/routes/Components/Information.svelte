@@ -6,7 +6,7 @@
     function notifyParent() {
         dispatch('message', {
             message: {
-                ChessPiecesSize: ChessPiecesSize,
+                ChessBoardSize: ChessBoardSize,
                 ChessPiecesStyle: ChessPiecesStyle,
                 ChessBoardStyle: ChessBoardStyle
             }
@@ -15,7 +15,7 @@
 
     interface Settings{
         ChessPiecesStyle: string;
-        ChessPiecesSize: string;
+        ChessBoardSize: string;
         ChessBoardStyle: string;
     }
 
@@ -60,17 +60,17 @@
 
     // Settings
     // Chesspieces size
-    let ChessPiecesSize = "large";
+    let ChessBoardSize = "large";
     
-    let sizeChesspieces = ["small", "medium", "large", "huge", "gigantic"];
+    let sizeChessboard = ["small", "medium", "large"];
 
     function NextSizeChesspieces() {
-        let index = sizeChesspieces.indexOf(ChessPiecesSize);
+        let index = sizeChessboard.indexOf(ChessBoardSize);
         index++;
-        if (index >= sizeChesspieces.length) {
+        if (index >= sizeChessboard.length) {
             index = 0;
         }
-        ChessPiecesSize = sizeChesspieces[index];
+        ChessBoardSize = sizeChessboard[index];
         notifyParent();
     }
     // Chesspieces style
@@ -106,7 +106,7 @@
 
     // Reset to default values
     function StyleToDefault(){
-        ChessPiecesSize = "large";
+        ChessBoardSize = "large";
         ChessPiecesStyle = "abstract";
         ChessBoardStyle = "default";
         notifyParent();
@@ -138,8 +138,8 @@
         <h1>Settings</h1>
         <div class="sub-heading" >Board Style Settings</div>
         <hr>
-        <button class="button-1" on:click={NextSizeChesspieces}><div id="size-left">Chesspieces Size</div> <div id="size-right">{ChessPiecesSize}</div></button>
         <button class="button-1" on:click={NextStyleChesspieces}><div id="size-left">Chesspieces Style</div> <div id="size-right">{ChessPiecesStyle}</div></button>
+        <button class="button-1" on:click={NextSizeChesspieces}><div id="size-left">Chessboard Size</div> <div id="size-right">{ChessBoardSize}</div></button>
         <button class="button-1" on:click={NextStyleChessboard}><div id="size-left">Chessboard Style</div> <div id="size-right"> {ChessBoardStyle}</div></button>
         <div></div>
         <button class="button-1" on:click={StyleToDefault}>reset to default values</button>
