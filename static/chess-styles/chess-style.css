@@ -1,0 +1,201 @@
+/*
+ *
+ * Base
+ *
+ */
+
+ .cg-paper.cg-wrap {
+    box-sizing: content-box;
+    position: relative;
+    display: block;
+  }
+  
+  .cg-paper cg-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+  }
+  
+  .cg-paper cg-board {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 0;
+    background-size: cover;
+  }
+  
+  .cg-paper.cg-wrap.manipulable cg-board {
+    cursor: pointer;
+  }
+  
+  .cg-paper cg-board square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12.5%;
+    height: 12.5%;
+    pointer-events: none;
+  }
+  
+  .cg-paper cg-board square.move-dest {
+    pointer-events: auto;
+  }
+  
+  .cg-paper cg-board square.last-move {
+    will-change: transform;
+  }
+  
+  .cg-paper.cg-wrap piece {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12.5%;
+    height: 12.5%;
+    background-size: cover;
+    z-index: 2;
+    will-change: transform;
+    pointer-events: none;
+  }
+  
+  .cg-paper cg-board piece.dragging {
+    cursor: move;
+    /* !important to override z-index from 3D piece inline style */
+    z-index: 11 !important;
+  }
+  
+  .cg-paper piece.anim {
+    z-index: 8;
+  }
+  
+  .cg-paper piece.fading {
+    z-index: 1;
+    opacity: 0.5;
+  }
+  
+  .cg-paper.cg-wrap piece.ghost {
+    opacity: 0.3;
+  }
+  
+  .cg-paper.cg-wrap piece svg {
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.6;
+  }
+  
+  .cg-paper.cg-wrap cg-auto-pieces,
+  .cg-paper.cg-wrap .cg-shapes,
+  .cg-paper.cg-wrap .cg-custom-svgs {
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .cg-paper.cg-wrap cg-auto-pieces {
+    z-index: 2;
+  }
+  
+  .cg-paper.cg-wrap cg-auto-pieces piece {
+    opacity: 0.3;
+  }
+  
+  .cg-paper.cg-wrap .cg-shapes {
+    overflow: hidden;
+    opacity: 0.6;
+    z-index: 2;
+  }
+  
+  .cg-paper.cg-wrap .cg-custom-svgs {
+    /* over piece.anim = 8, but under piece.dragging = 11 */
+    z-index: 9;
+  }
+  
+  .cg-paper.cg-wrap .cg-custom-svgs svg {
+    overflow: visible;
+  }
+  
+  .cg-paper.cg-wrap coords {
+    position: absolute;
+    display:none;
+  }
+  
+  /*
+   *
+   * Board
+   * 
+   */
+  
+  .cg-paper cg-board {
+   outline:solid 1px #93877E;
+   background-image: url("/Chess-Boards/TestBoard.png");
+  }
+  
+  /** Interactive board square colors */
+  .cg-paper cg-board square.move-dest {
+    background: radial-gradient(rgba(164, 97, 91, 0.8) 22%, rgba(0, 0, 0, 0) 0);
+  }
+  .cg-paper cg-board square.move-dest:hover {
+    background: radial-gradient(rgba(164, 97, 91, 0.8) 44%, rgba(0, 0, 0, 0) 0);
+  }
+  .cg-paper cg-board square.oc.move-dest {
+    background: radial-gradient(transparent 0%, transparent 80%, rgba(164, 97, 91, 0.8) 80%);
+  }
+  .cg-paper cg-board square.oc.move-dest:hover {
+    background: radial-gradient(transparent 0%, transparent 70%, rgba(164, 97, 91, 0.8) 75%);
+  }
+  .cg-paper cg-board square.selected {
+    background-color: rgba(164, 97, 91, 0.8);
+  }
+  
+  /** Alternating colors in rank/file labels */
+  .cg-paper.cg-wrap.orientation-white coords.ranks coord:nth-child(2n),
+  .cg-paper.cg-wrap.orientation-white coords.files coord:nth-child(2n),
+  .cg-paper.cg-wrap.orientation-black coords.ranks coord:nth-child(2n + 1),
+  .cg-paper.cg-wrap.orientation-black coords.files coord:nth-child(2n + 1) {
+    color: rgba(72, 72, 72, 0.8);
+  }
+  
+  .cg-paper.cg-wrap.orientation-black coords.ranks coord:nth-child(2n),
+  .cg-paper.cg-wrap.orientation-black coords.files coord:nth-child(2n),
+  .cg-paper.cg-wrap.orientation-white coords.ranks coord:nth-child(2n + 1),
+  .cg-paper.cg-wrap.orientation-white coords.files coord:nth-child(2n + 1) {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  
+  /*
+   *
+   * Pieces
+   *
+   **/
+  
+  
+  .cg-paper.cg-wrap piece.pawn.white { background-image: url('.././Chess-Pieces/Kiwen-suwi/wP.svg'); }
+  .cg-paper.cg-wrap piece.pawn.black { background-image: url('.././Chess-Pieces/Kiwen-suwi/bP.svg'); }
+  .cg-paper.cg-wrap piece.rook.white { background-image: url('.././Chess-Pieces/Kiwen-suwi/wR.svg'); }
+  .cg-paper.cg-wrap piece.rook.black { background-image: url('.././Chess-Pieces/Kiwen-suwi/bR.svg'); }
+  .cg-paper.cg-wrap piece.bishop.white { background-image: url('.././Chess-Pieces/Kiwen-suwi/wB.svg'); }
+  .cg-paper.cg-wrap piece.bishop.black { background-image: url('.././Chess-Pieces/Kiwen-suwi/bB.svg'); }
+  .cg-paper.cg-wrap piece.knight.white { background-image: url('.././Chess-Pieces/Kiwen-suwi/wN.svg'); }
+  .cg-paper.cg-wrap piece.knight.black { background-image: url('.././Chess-Pieces/Kiwen-suwi/bN.svg'); }
+  .cg-paper.cg-wrap piece.queen.white { background-image: url('.././Chess-Pieces/Kiwen-suwi/wQ.svg'); }
+  .cg-paper.cg-wrap piece.queen.black { background-image: url('.././Chess-Pieces/Kiwen-suwi/bQ.svg'); }
+  .cg-paper.cg-wrap piece.king.white { background-image: url('.././Chess-Pieces/Kiwen-suwi/wK.svg'); }
+  .cg-paper.cg-wrap piece.king.black { background-image: url('.././Chess-Pieces/Kiwen-suwi/bK.svg'); }

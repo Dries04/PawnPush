@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Chessboard from './Components/Chessboard.svelte';
 	import Information from './Components/Information.svelte';
 	import './styles.css';
+	import { Chess } from 'svelte-chess';
 
 	let ChessPiecesSize: string;
 	let ChessPiecesStyle: string;
@@ -28,13 +28,10 @@
 
 <div class="container">
 	<div class="half-screen" id="left">
-		{#key ChessPiecesStyle}
-			{#key ChessBoardStyle}
-				{#key ChessPiecesSize}
-					<Chessboard Chess_Pieces_style={ChessPiecesStyle} Chess_Board_Style={ChessBoardStyle} Chess_Pieces_Size={ChessPiecesSize}/>
-				{/key}
-			{/key}	
-		{/key}
+		<div class="testtest">
+			<link rel="stylesheet" href="/chess-styles/chess-style.css" />
+			<Chess class="cg-paper"/>
+		</div>
 	</div>
 	<div class="half-screen" id="right">
 		<Information on:message={handleMessage}/>
@@ -50,6 +47,13 @@
 	.half-screen {
 		width: 50%;
 		height: 100%;
+	}
+
+	.testtest {
+		width: 90%;
+		height: 90%;
+		margin-top: 6%;
+		margin-left: 6%;
 	}
 
 	#left {
