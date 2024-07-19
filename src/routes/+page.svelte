@@ -4,8 +4,8 @@
 	import { Chess } from 'svelte-chess';
 
 	let ChessBoardSize: string;
-	let ChessPiecesStyle: string;
-	let ChessBoardStyle: string;
+	let ChessPiecesStyle: string = "abstract";
+	let ChessBoardStyle: string = "default";
 
 	function handleMessage(event: { detail: { message: { ChessBoardSize: string; ChessPiecesStyle: string; ChessBoardStyle: string; }; }; }) {
 		if(event.detail.message.ChessBoardSize){
@@ -50,10 +50,16 @@
 <div class="container">
 	<div class="half-screen" id="left">
 		{#key ChessBoardSize}
-			<div class="Chessboard_container" style={style_chessboardSize}> 
-				<link rel="stylesheet" href="/chess-styles/chess-style.css" />
+			<div style={style_chessboardSize}> 
 				{#key ChessPiecesStyle}
-					<Chess class="cg-paper" />
+					{#key ChessBoardStyle}
+						{#if ChessPiecesStyle === "abstract" && ChessBoardStyle === "default"}
+							<link rel="stylesheet" href="/chess-styles/chess-style.css" />
+						{:else if ChessPiecesStyle === "weird" && ChessBoardStyle === "default"}
+							<link rel="stylesheet" href="/chess-styles/chess-style2.css" />
+						{/if}
+						<Chess class="cg-paper" />
+					{/key}
 				{/key}				
 			</div>
 		{/key}
@@ -73,13 +79,6 @@
 		width: 50%;
 		height: 100%;
 	}
-
-	/* .Chessboard_container {
-		width: 90%;
-		height: 90%;
-		margin-top: 6%;
-		margin-left: 6%;
-	} */
 
 	#left {
 		background-color: var(--color-bg-1);
