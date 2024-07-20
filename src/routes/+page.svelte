@@ -54,11 +54,13 @@
 				{#key ChessPiecesStyle}
 					{#key ChessBoardStyle}
 						{#if ChessPiecesStyle === "abstract" && ChessBoardStyle === "default"}
-							<link rel="stylesheet" href="/chess-styles/chess-style.css" />
-						{:else if ChessPiecesStyle === "weird" && ChessBoardStyle === "default"}
-							<link rel="stylesheet" href="/chess-styles/chess-style2.css" />
+							<link rel="stylesheet" href="/chess-styles/Kiwen-suwi_default.css" />
+						{:else if ChessPiecesStyle === "modern" && ChessBoardStyle === "default"}
+							<link rel="stylesheet" href="/chess-styles/caliente_default.css" />
+						{:else if ChessPiecesStyle === "pixel" && ChessBoardStyle === "default"}
+							<link rel="stylesheet" href="/chess-styles/Pixel_default.css" />
 						{/if}
-						<Chess class="cg-paper" />
+							<Chess class="cg-paper" />
 					{/key}
 				{/key}				
 			</div>
