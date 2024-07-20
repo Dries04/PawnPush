@@ -1,6 +1,7 @@
 <script lang="ts">
     import '.././styles.css';
     import {createEventDispatcher} from 'svelte';
+    import Repertoire from './Repertoire.svelte';
     const dispatch = createEventDispatcher();
 
     function notifyParent() {
@@ -131,6 +132,7 @@
     <!-- INFO DIV -->
     <div class="Info-div">
         <h1>Repertoire Builder</h1>
+        <Repertoire />
     </div>
 
     <!-- SETTINGS DIV -->
@@ -194,13 +196,5 @@
     #size-right {
         float: right;
         margin-right: 10%;
-    }
-
-    /* Others */
-    .sub-heading {
-        margin-left: 10%;
-        margin-bottom: 5%;
-        margin-top: 5%;
-        color: var(--color-text-1);
     }
 </style>

@@ -134,7 +134,7 @@
   
   .cg-paper.cg-wrap coords {
     position: absolute;
-    display: grid;
+    display:none;
   }
   
   /*

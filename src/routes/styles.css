@@ -116,3 +116,9 @@ hr{
 	border: 0;
 	float: right;
 }
+.sub-heading {
+	margin-left: 10%;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	color: var(--color-text-1);
+}
