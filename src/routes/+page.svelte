@@ -46,7 +46,12 @@
 	$: style_chessboardSize = `width: ${chessboardWidth}%; height: ${chessboardWidth}%; margin-top: ${chessboardtop}%; margin-left: ${chessboardtop}%;`;
 
 	// Chessboard api
-	let history: any, turn: any, moveNumber, chess: Chess;
+	let history: any, turn: any, moveNumber, chess: Chess, fen: any;
+
+	function moveListener(event: any){
+		const move = event.detail;
+		console.log(move);
+	}
 
 </script>
 
@@ -68,10 +73,11 @@
 						{:else if ChessPiecesStyle === "pixel" && ChessBoardStyle === "default"}
 							<link rel="stylesheet" href="/chess-styles/Pixel_default.css" />
 						{/if}
-							<Chess class="cg-paper" bind:this={chess} bind:turn={turn} bind:history={history}/>
+							<Chess class="cg-paper" bind:this={chess} bind:turn={turn} bind:history={history} bind:fen={fen} on:move={moveListener}/>
 							<div class="space"></div>
-							<button class="button-2" id="board_nav" on:click={()=>chess?.reset()}>Reset</button>
-							<button class="button-2" id="board_nav" on:click={()=>chess?.undo()}>Undo</button>
+							<button class="button-2" id="board_nav" on:click={()=>chess?.reset()}>Reset<i id="trash-icon" class="fa-solid fa-trash"></i></button>
+							<button class="button-2" id="board_nav" on:click={()=>chess?.undo()}>Undo<i id="undo-icon" class="fa-solid fa-rotate-left"></i></button>
+							<button class="button-2" >test</button>
 							<div></div>
 					{/key}
 				{/key}				
