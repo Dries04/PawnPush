@@ -50,7 +50,7 @@
 
 	function moveListener(event: any){
 		const move = event.detail;
-		console.log(move);
+		
 	}
 
 </script>
@@ -72,13 +72,17 @@
 							<link rel="stylesheet" href="/chess-styles/caliente_default.css" />
 						{:else if ChessPiecesStyle === "pixel" && ChessBoardStyle === "default"}
 							<link rel="stylesheet" href="/chess-styles/Pixel_default.css" />
+						{:else if ChessPiecesStyle === "classic" && ChessBoardStyle === "default"}
+							<link rel="stylesheet" href="/chess-styles/cburnett-default.css" />
+						{:else if ChessPiecesStyle === "funky" && ChessBoardStyle === "default"}
+							<link rel="stylesheet" href="/chess-styles/monarchy-default.css" />
+						{:else if ChessPiecesStyle === "futuristic" && ChessBoardStyle === "default"}
+							<link rel="stylesheet" href="/chess-styles/kosal-default.css" />
 						{/if}
 							<Chess class="cg-paper" bind:this={chess} bind:turn={turn} bind:history={history} bind:fen={fen} on:move={moveListener}/>
 							<div class="space"></div>
 							<button class="button-2" id="board_nav" on:click={()=>chess?.reset()}>Reset<i id="trash-icon" class="fa-solid fa-trash"></i></button>
 							<button class="button-2" id="board_nav" on:click={()=>chess?.undo()}>Undo<i id="undo-icon" class="fa-solid fa-rotate-left"></i></button>
-							<button class="button-2" >test</button>
-							<div></div>
 					{/key}
 				{/key}				
 			</div>

@@ -2,16 +2,14 @@
     import '.././styles.css';
 
     let WhiteRepertoireName = "Name your repertoire";
+    let BlackRepertoireName = "Name your repertoire";
 
-    function goToNextPageInRepertoire(){
-        
-    }
 </script>
 
 <div class="Rep">
-    <div class="sub-heading" >Board Style Settings</div>
+    <div class="sub-heading"> Main screen</div>
     <hr>
-    <button class="button-1" on:click={goToNextPageInRepertoire}><div id="size-left">White repertoire</div> <div id="size-right">{WhiteRepertoireName}</div></button>
+    <button class="button-1"><div id="size-left">White repertoire</div> <div id="size-right">{WhiteRepertoireName}</div></button>
 </div>
 
 <style>

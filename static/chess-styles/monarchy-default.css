@@ -200,15 +200,15 @@
    *
    **/
   
-   .cg-paper.cg-wrap piece.pawn.white { background-image: url('.././Chess-Pieces/caliente/wP.svg'); }
-   .cg-paper.cg-wrap piece.pawn.black { background-image: url('.././Chess-Pieces/caliente/bP.svg'); }
-  .cg-paper.cg-wrap piece.rook.white { background-image: url('.././Chess-Pieces/caliente/wR.svg'); }
-  .cg-paper.cg-wrap piece.rook.black { background-image: url('.././Chess-Pieces/caliente/bR.svg'); }
-  .cg-paper.cg-wrap piece.bishop.white { background-image: url('.././Chess-Pieces/caliente/wB.svg'); }
-  .cg-paper.cg-wrap piece.bishop.black { background-image: url('.././Chess-Pieces/caliente/bB.svg'); }
-  .cg-paper.cg-wrap piece.knight.white { background-image: url('.././Chess-Pieces/caliente/wN.svg'); }
-  .cg-paper.cg-wrap piece.knight.black { background-image: url('.././Chess-Pieces/caliente/bN.svg'); }
-  .cg-paper.cg-wrap piece.queen.white { background-image: url('.././Chess-Pieces/caliente/wQ.svg'); }
-  .cg-paper.cg-wrap piece.queen.black { background-image: url('.././Chess-Pieces/caliente/bQ.svg'); }
-  .cg-paper.cg-wrap piece.king.white { background-image: url('.././Chess-Pieces/caliente/wK.svg'); }
-  .cg-paper.cg-wrap piece.king.black { background-image: url('.././Chess-Pieces/caliente/bK.svg'); }
+   .cg-paper.cg-wrap piece.pawn.white { background-image: url('.././Chess-Pieces/monarchy/wP.svg'); }
+   .cg-paper.cg-wrap piece.pawn.black { background-image: url('.././Chess-Pieces/monarchy/bP.svg'); }
+  .cg-paper.cg-wrap piece.rook.white { background-image: url('.././Chess-Pieces/monarchy/wR.svg'); }
+  .cg-paper.cg-wrap piece.rook.black { background-image: url('.././Chess-Pieces/monarchy/bR.svg'); }
+  .cg-paper.cg-wrap piece.bishop.white { background-image: url('.././Chess-Pieces/monarchy/wB.svg'); }
+  .cg-paper.cg-wrap piece.bishop.black { background-image: url('.././Chess-Pieces/monarchy/bB.svg'); }
+  .cg-paper.cg-wrap piece.knight.white { background-image: url('.././Chess-Pieces/monarchy/wN.svg'); }
+  .cg-paper.cg-wrap piece.knight.black { background-image: url('.././Chess-Pieces/monarchy/bN.svg'); }
+  .cg-paper.cg-wrap piece.queen.white { background-image: url('.././Chess-Pieces/monarchy/wQ.svg'); }
+  .cg-paper.cg-wrap piece.queen.black { background-image: url('.././Chess-Pieces/monarchy/bQ.svg'); }
+  .cg-paper.cg-wrap piece.king.white { background-image: url('.././Chess-Pieces/monarchy/wK.svg'); }
+  .cg-paper.cg-wrap piece.king.black { background-image: url('.././Chess-Pieces/monarchy/bK.svg'); }

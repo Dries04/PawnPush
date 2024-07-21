@@ -76,7 +76,7 @@
     }
     // Chesspieces style
     
-    let styleChesspieces = ["classic", "modern", "pixel", "futuristic", "abstract", "weird", "funky"];
+    let styleChesspieces = ["classic", "modern", "pixel", "futuristic", "abstract", "funky"];
 
     let ChessPiecesStyle = "abstract";
 
@@ -145,6 +145,9 @@
         <button class="button-1" on:click={NextStyleChessboard}><div id="size-left">Chessboard Style</div> <div id="size-right"> {ChessBoardStyle}</div></button>
         <div></div>
         <button class="button-1" on:click={StyleToDefault}>reset to default values</button>
+        <div class="sub-heading">Engine Settings</div>
+        <hr>
+        <button class="button-1"><div id="size-left">Engine Think Time</div></button>
     </div>
 
     <!-- PROFILE DIV -->
@@ -192,6 +195,7 @@
         float: left;
         margin-left: 10%;
         padding: 0px;
+        color: var(--color-text-1);
     }
     #size-right {
         float: right;

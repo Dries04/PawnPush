@@ -200,15 +200,15 @@
    *
    **/
   
-   .cg-paper.cg-wrap piece.pawn.white { background-image: url('.././Chess-Pieces/caliente/wP.svg'); }
-   .cg-paper.cg-wrap piece.pawn.black { background-image: url('.././Chess-Pieces/caliente/bP.svg'); }
-  .cg-paper.cg-wrap piece.rook.white { background-image: url('.././Chess-Pieces/caliente/wR.svg'); }
-  .cg-paper.cg-wrap piece.rook.black { background-image: url('.././Chess-Pieces/caliente/bR.svg'); }
-  .cg-paper.cg-wrap piece.bishop.white { background-image: url('.././Chess-Pieces/caliente/wB.svg'); }
-  .cg-paper.cg-wrap piece.bishop.black { background-image: url('.././Chess-Pieces/caliente/bB.svg'); }
-  .cg-paper.cg-wrap piece.knight.white { background-image: url('.././Chess-Pieces/caliente/wN.svg'); }
-  .cg-paper.cg-wrap piece.knight.black { background-image: url('.././Chess-Pieces/caliente/bN.svg'); }
-  .cg-paper.cg-wrap piece.queen.white { background-image: url('.././Chess-Pieces/caliente/wQ.svg'); }
-  .cg-paper.cg-wrap piece.queen.black { background-image: url('.././Chess-Pieces/caliente/bQ.svg'); }
-  .cg-paper.cg-wrap piece.king.white { background-image: url('.././Chess-Pieces/caliente/wK.svg'); }
-  .cg-paper.cg-wrap piece.king.black { background-image: url('.././Chess-Pieces/caliente/bK.svg'); }
+   .cg-paper.cg-wrap piece.pawn.white { background-image: url('.././Chess-Pieces/kosal/wP.svg'); }
+   .cg-paper.cg-wrap piece.pawn.black { background-image: url('.././Chess-Pieces/kosal/bP.svg'); }
+  .cg-paper.cg-wrap piece.rook.white { background-image: url('.././Chess-Pieces/kosal/wR.svg'); }
+  .cg-paper.cg-wrap piece.rook.black { background-image: url('.././Chess-Pieces/kosal/bR.svg'); }
+  .cg-paper.cg-wrap piece.bishop.white { background-image: url('.././Chess-Pieces/kosal/wB.svg'); }
+  .cg-paper.cg-wrap piece.bishop.black { background-image: url('.././Chess-Pieces/kosal/bB.svg'); }
+  .cg-paper.cg-wrap piece.knight.white { background-image: url('.././Chess-Pieces/kosal/wN.svg'); }
+  .cg-paper.cg-wrap piece.knight.black { background-image: url('.././Chess-Pieces/kosal/bN.svg'); }
+  .cg-paper.cg-wrap piece.queen.white { background-image: url('.././Chess-Pieces/kosal/wQ.svg'); }
+  .cg-paper.cg-wrap piece.queen.black { background-image: url('.././Chess-Pieces/kosal/bQ.svg'); }
+  .cg-paper.cg-wrap piece.king.white { background-image: url('.././Chess-Pieces/kosal/wK.svg'); }
+  .cg-paper.cg-wrap piece.king.black { background-image: url('.././Chess-Pieces/kosal/bK.svg'); }
