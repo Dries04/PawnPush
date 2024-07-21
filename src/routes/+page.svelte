@@ -20,7 +20,7 @@
 		}
 	}
 
-	let chessboardWidth = 90;
+	let chessboardWidth = 80;
 	let chessboardtop = 6;
 
 	function switchChessBoardSize(){
@@ -33,12 +33,20 @@
 			chessboardtop = 6;
 		}
 		else if(ChessBoardSize === "large"){
+			chessboardWidth = 80;
+			chessboardtop = 6;
+
+		}
+		else if(ChessBoardSize === "huge"){
 			chessboardWidth = 90;
 			chessboardtop = 6;
 		}
 	}
 
 	$: style_chessboardSize = `width: ${chessboardWidth}%; height: ${chessboardWidth}%; margin-top: ${chessboardtop}%; margin-left: ${chessboardtop}%;`;
+
+	// Chessboard api
+	let history: any, turn: any, moveNumber, chess: Chess;
 
 </script>
 
@@ -60,7 +68,11 @@
 						{:else if ChessPiecesStyle === "pixel" && ChessBoardStyle === "default"}
 							<link rel="stylesheet" href="/chess-styles/Pixel_default.css" />
 						{/if}
-							<Chess class="cg-paper" />
+							<Chess class="cg-paper" bind:this={chess} bind:turn={turn} bind:history={history}/>
+							<div class="space"></div>
+							<button class="button-2" id="board_nav" on:click={()=>chess?.reset()}>Reset</button>
+							<button class="button-2" id="board_nav" on:click={()=>chess?.undo()}>Undo</button>
+							<div></div>
 					{/key}
 				{/key}				
 			</div>
@@ -81,7 +93,15 @@
 		width: 50%;
 		height: 100%;
 	}
-
+	.space {
+		height: 10px;
+	}
+	#board_nav {
+		margin: 0;
+		padding: 0.5em;
+		border: 0;
+		font-size: 0.9em;
+	}
 	#left {
 		background-color: var(--color-bg-1);
 		box-sizing: border-box;

@@ -63,7 +63,7 @@
     // Chesspieces size
     let ChessBoardSize = "large";
     
-    let sizeChessboard = ["small", "medium", "large"];
+    let sizeChessboard = ["small", "medium", "large", "huge"];
 
     function NextSizeChesspieces() {
         let index = sizeChessboard.indexOf(ChessBoardSize);
